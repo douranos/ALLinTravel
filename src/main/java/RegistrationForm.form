@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="RegistrationForm">
+  <grid id="27dc6" binding="RegisterPanel" layout-manager="GridLayoutManager" row-count="9" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties>
+      <background color="-904120"/>
+      <font name="Baskerville Old Face" size="18" style="1"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="2cb02" class="javax.swing.JLabel" binding="registerLabel">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Lucida Bright" size="48"/>
+          <text value="Register"/>
+        </properties>
+      </component>
+      <component id="5c7e8" class="javax.swing.JTextField" binding="tfName">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+        </properties>
+      </component>
+      <component id="be895" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+          <labelFor value="8e58b"/>
+          <text resource-bundle="application" key="email"/>
+        </properties>
+      </component>
+      <component id="b94cb" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+          <labelFor value="36a4f"/>
+          <text resource-bundle="application" key="phone"/>
+        </properties>
+      </component>
+      <component id="9494f" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+          <labelFor value="b7baa"/>
+          <text resource-bundle="application" key="address"/>
+        </properties>
+      </component>
+      <component id="8e58b" class="javax.swing.JTextField" binding="tfEmail">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+        </properties>
+      </component>
+      <component id="36a4f" class="javax.swing.JTextField" binding="tfPhone">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+        </properties>
+      </component>
+      <component id="b7baa" class="javax.swing.JTextField" binding="tfAddress">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+        </properties>
+      </component>
+      <component id="30f54" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+          <labelFor value="f06e8"/>
+          <text value="Password"/>
+        </properties>
+      </component>
+      <component id="b4dce" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+          <labelFor value="4f5ab"/>
+          <text value="Confirm Password"/>
+        </properties>
+      </component>
+      <component id="f06e8" class="javax.swing.JPasswordField" binding="pfPassword">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="4f5ab" class="javax.swing.JPasswordField" binding="pfConfirmPassword">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+        </properties>
+      </component>
+      <vspacer id="20fa2">
+        <constraints>
+          <grid row="7" column="0" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="9b6e3" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+          <labelFor value="5c7e8"/>
+          <text value="Name"/>
+        </properties>
+      </component>
+      <component id="de9fa" class="javax.swing.JButton" binding="btnCancel">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+          <text resource-bundle="application" key="cancel"/>
+        </properties>
+      </component>
+      <component id="a185e" class="javax.swing.JButton" binding="btnRegister">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Baskerville Old Face" size="18" style="1"/>
+          <text value="Register"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
