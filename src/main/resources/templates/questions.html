@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quiz Questions</title>
+</head>
+<body>
+    <div>
+        <h2>Question <span th:text="${currentIndex + 1}"></span> of <span th:text="${totalQuestions}"></span>: <span th:text="${question.category}"></span></h2>
+        <p th:text="${question.question}"></p>
+
+        <a th:href="@{/quiz/questions/{id}(id=${currentIndex - 1})}" th:if="${currentIndex > 0}">Previous Question</a>
+        <a th:href="@{/quiz/questions/{id}(id=${currentIndex + 1})}" th:if="${currentIndex + 1 < totalQuestions}">Next Question</a>
+    </div>
+</body>
+</html>
