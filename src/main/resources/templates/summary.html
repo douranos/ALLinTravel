@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quiz Summary</title>
+</head>
+<body>
+    <h2>Your Answers</h2>
+    <ul>
+        <li th:each="answer : ${answers}">
+            Question ID: <span th:text="${answer.questionId}"></span>, 
+            Your Answer: <span th:text="${answer.userResponse}"></span>
+        </li>
+    </ul>
+</body>
+</html>

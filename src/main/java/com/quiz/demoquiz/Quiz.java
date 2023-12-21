@@ -2,10 +2,16 @@ package com.quiz.demoquiz;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
+import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Table;
+
+import java.util.List;  
 
 @Entity
 @Table(name = "travel_questions")
@@ -46,5 +52,17 @@ public class Quiz {
     public void setQuestion(String question) {
         this.question = question;
     }
+
+    @Column(name = "isMultipleChoice")
+    private boolean isMultipleChoice;
+
+    @OneToMany(mappedBy = "quiz")
+    private List<Choice> choices = new ArrayList<>();
+
+    public boolean isMultipleChoice() {
+        return isMultipleChoice;
+    }
 }
+
+
 
