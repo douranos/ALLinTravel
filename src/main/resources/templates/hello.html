@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <style>
+        body {
+            background-image: url('/background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background: rgba(255, 255, 255, 0);
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+        .header a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+        }
+        .main-content {
+            text-align: center;
+            padding: 300px 20px;
+        }
+        .main-content h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .start-button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+    </div>
+    <div class="main-content">
+        <h1 th:text="${message}"></h1>
+        <button onclick="location.href='/questions'" class="start-button">Let's Start</button>
+    </div>
+</body>
+</html>

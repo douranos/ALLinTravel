@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Quiz Questions</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+        <style>
+            body, html {
+                height: 100%; /* Set the height of the body and html to 100% */
+                margin: 0; /* Reset default margin */
+                display: flex;
+                justify-content: center; /* Center content horizontally */
+                align-items: center; /* Center content vertically */
+            }
+            body {
+                background-color: #f4eae6; /* Soft peach background */
+                color: #594f3b; /* Earthy tone for text */
+                font-family: 'Arial', sans-serif;
+            }
+            .container {
+                max-width: 900px; /* Adjust width as needed */
+                width: 100%;
+                margin: 0 auto; /* Center the container */
+                padding: 20px;
+            }
+            h2 {
+                color: #8d775f; /* Warm brown tone for headings */
+            }
+            .question-box {
+                background-color: #fff5e1; /* Lighter tone for question box */
+                border-radius: 10px;
+                padding: 20px;
+                margin-bottom: 20px;
+                margin: 20px; /* Add margin for spacing */
+            }
+            .choice {
+                padding: 5px 0;
+            }
+            .btn-custom {
+                background-color: #a88f6d; /* Boho button color */
+                color: white;
+                border: none;
+            }
+            .btn-custom:hover {
+                background-color: #917c56;
+            }
+            .nav-link {
+                color: #8d775f;
+            }
+            .nav-link:hover {
+                color: #a88f6d;
+            }
+            textarea {
+                width: 100%;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                padding: 10px;
+            }
+            .choice-btn {
+                margin: 10px 0;
+                width: 100%;
+                background-color: #8d775f; /* Boho style button color */
+                color: white;
+                border: none;
+                padding: 10px;
+                border-radius: 5px;
+                margin-bottom: 15px;
+            }
+            .choice-btn:hover {
+                background-color: #a88f6d;
+            }
+            .nav-arrow {
+                font-size: 32px; /* Adjust size as needed */
+                color: #8d775f; /* Arrow color */
+                cursor: pointer;
+                transition: color 0.3s ease;
+                margin: 0 20px;
+            }
+            .nav-arrow:hover {
+                color: #a88f6d; /* Arrow hover color */
+            }
+            .question-container {
+                display: flex;
+                align-items: center;
+            }
+            .question-content {
+                flex-grow: 1;
+                text-align: center;
+            }
+            .text-input-section {
+                display: flex;
+                flex-direction: column;
+                gap: 10px; /* Space between textarea and button */
+            }
+        </style>
+    </head> 
+    <body>
+        <div class="container">
+            <div class="question-box">
+                <div class="question-container">
+                    <!-- Previous Question Arrow -->
+                    <div th:if="${currentIndex > 0}">
+                        <a th:href="@{/quiz/questions/{id}(id=${currentIndex - 1})}" class="nav-arrow">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Question Content -->
+                    <div class="question-content">
+                        <div class="question-content">
+                            <h2>Question <span th:text="${currentIndex + 1}"></span> of <span th:text="${totalQuestions}"></span>: <span th:text="${question.category}"></span></h2>
+                            <p th:text="${question.question}"></p>
+        
+                            <!-- Multiple-choice section -->
+                            <div th:if="${question.isMultipleChoice}">
+                                <form th:action="@{/quiz/questions/{nextId}(nextId=${currentIndex + 1})}" method="post">
+                                    <div th:each="choice : ${choices}">
+                                        <!-- Choice as a button -->
+                                        <button type="submit" class="btn choice-btn" th:name="selectedChoice" th:value="${choice.id}" th:text="${choice.choice}"></button>
+                                    </div>
+                                </form>
+                            </div>
+
+        
+                            <!-- Text input section -->
+                            <div th:if="${!question.isMultipleChoice}">
+                                <form th:action="@{/quiz/questions/{nextId}(nextId=${currentIndex + 1})}" method="post">
+                                    <textarea name="textInput" rows="4"></textarea><br/>
+                                    <input type="submit" class="btn btn-custom" value="Submit Answer" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Next Question Arrow -->
+                    <div th:if="${currentIndex + 1 < totalQuestions}">
+                        <a th:href="@{/quiz/questions/{id}(id=${currentIndex + 1})}" class="nav-arrow">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+</html>
