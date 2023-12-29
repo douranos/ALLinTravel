@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import com.quiz.demoquiz.controller.dto.ChatMessagePrompt;
+import com.theokanning.openai.completion.CompletionRequest;
+import com.theokanning.openai.completion.chat.ChatCompletionRequest;
+import com.theokanning.openai.service.OpenAiService;
+
+import lombok.var;
 
 @Controller
 public class MainController {
@@ -41,7 +47,7 @@ public class MainController {
         @Autowired
         ChoiceDao choiceDao; // Autowire the ChoiceDao
 
-        @GetMapping("quiz/questions/{id}")
+        @GetMapping("/questions/{id}")
         public String getQuestion(Model model, @PathVariable int id, HttpSession session) {
             List<Quiz> allQuestions = questionService.getAllQuestions();
             if (id >= 0 && id < allQuestions.size()) {
@@ -65,7 +71,7 @@ public class MainController {
             return "questions";
         }
 
-        @PostMapping("/quiz/questions/{nextId}")
+        @PostMapping("/questions/{nextId}")
         public String submitAnswerAndGoNext(@PathVariable int nextId, @RequestParam(required = false) Integer selectedChoice, @RequestParam(required = false) String textInput, HttpSession session) {
             List<Answer> answers = (List<Answer>) session.getAttribute("answers");
             if (answers == null) {
@@ -87,9 +93,9 @@ public class MainController {
             session.setAttribute("answers", answers);
 
             if (nextId > 20) {
-                return "redirect:/quiz/summary";
+                return "redirect:/summary";
             } else {
-                return "redirect:/quiz/questions/" + nextId;
+                return "redirect:/questions/" + nextId;
             }
         }
 
@@ -102,13 +108,44 @@ public class MainController {
             return currentId;
         }
 
-        @GetMapping("/quiz/summary")
+        @GetMapping("/summary")
         public String showSummary(Model model, HttpSession session) {
             List<Answer> answers = (List<Answer>) session.getAttribute("answers");
+            String prompt = "",result = "";
             if (answers != null) {
                 model.addAttribute("answers", answers);
-            }
+                prompt =  "write  with 3 words 3 cities for people who like " +answers.get(0).getUserResponse()+", "+answers.get(8).getUserResponse()+" adventures, "+answers.get(3).getUserResponse()+", "+
+        answers.get(1).getUserResponse()+" locations,"+answers.get(2).getUserResponse()+" trip."+"Budget is "+answers.get(4).getUserResponse()+" euros"+
+        " and they plan to travel for "+answers.get(5).getUserResponse()+" days on "+answers.get(10).getUserResponse()+"."+"His travel experience is :"+
+        answers.get(7).getUserResponse()+" and he is "+answers.get(9).getUserResponse()+" with language barriers or cultural differences and wants to travell "+answers.get(16).getUserResponse()+". His weather preferences are "+
+        answers.get(11).getUserResponse()+" and wants to avoid "+answers.get(12).getUserResponse()+". His health concerns or dietary restrictions are :"+answers.get(13).getUserResponse()+
+        ". He is "+answers.get(14).getUserResponse()+" with the current health and safety situation (like political stability, crime rate, pandemic conditions) in potential destinations."+"The interests of the partner are :"+answers.get(17).getUserResponse()+". "+
+        "Other specific landmarks, events, or experiences are: "+answers.get(20).getUserResponse();
+          }
+
+          OpenAiService service = new OpenAiService("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");
+    CompletionRequest completionRequest = CompletionRequest.builder()
+            .prompt(prompt)
+            .model("text-davinci-003")
+            .echo(true)
+            .build();
+     result = service.createCompletion(completionRequest).getChoices().get(0).getText();
+     model.addAttribute("result", result);
             return "summary"; // summary.html Thymeleaf template
         }
+       
+
+	@PostMapping("/chat")
+	public String getChatMessages(@RequestBody ChatMessagePrompt prompt) {
+
+		// /v1/chat/completions ->
+		// gpt-4, gpt-4-0613, gpt-4-32k, gpt-4-32k-0613, gpt-3.5-turbo,
+		// gpt-3.5-turbo-0613, gpt-3.5-turbo-16k, gpt-3.5-turbo-16k-0613
+
+		OpenAiService service = new OpenAiService("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");
+		ChatCompletionRequest completionRequest = ChatCompletionRequest.builder().messages(prompt.getChatMessage())
+				.model("gpt-3.5-turbo-16k").build();
+		return service.createChatCompletion(completionRequest).getChoices().get(0).getMessage().getContent();
+	}
 
     }

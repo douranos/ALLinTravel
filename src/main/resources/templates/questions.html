@@ -100,7 +100,7 @@
                 <div class="question-container">
                     <!-- Previous Question Arrow -->
                     <div th:if="${currentIndex > 0}">
-                        <a th:href="@{/quiz/questions/{id}(id=${currentIndex - 1})}" class="nav-arrow">
+                        <a th:href="@{/questions/{id}(id=${currentIndex - 1})}" class="nav-arrow">
                             <i class="fas fa-chevron-left"></i>
                         </a>
                     </div>
@@ -113,7 +113,7 @@
         
                             <!-- Multiple-choice section -->
                             <div th:if="${question.isMultipleChoice}">
-                                <form th:action="@{/quiz/questions/{nextId}(nextId=${currentIndex + 1})}" method="post">
+                                <form th:action="@{/questions/{nextId}(nextId=${currentIndex + 1})}" method="post">
                                     <div th:each="choice : ${choices}">
                                         <!-- Choice as a button -->
                                         <button type="submit" class="btn choice-btn" th:name="selectedChoice" th:value="${choice.id}" th:text="${choice.choice}"></button>
@@ -124,7 +124,7 @@
         
                             <!-- Text input section -->
                             <div th:if="${!question.isMultipleChoice}">
-                                <form th:action="@{/quiz/questions/{nextId}(nextId=${currentIndex + 1})}" method="post">
+                                <form th:action="@{/questions/{nextId}(nextId=${currentIndex + 1})}" method="post">
                                     <textarea name="textInput" rows="4"></textarea><br/>
                                     <input type="submit" class="btn btn-custom" value="Submit Answer" />
                                 </form>
@@ -134,7 +134,7 @@
     
                     <!-- Next Question Arrow -->
                     <div th:if="${currentIndex + 1 < totalQuestions}">
-                        <a th:href="@{/quiz/questions/{id}(id=${currentIndex + 1})}" class="nav-arrow">
+                        <a th:href="@{/questions/{id}(id=${currentIndex + 1})}" class="nav-arrow">
                             <i class="fas fa-chevron-right"></i>
                         </a>
                     </div>
