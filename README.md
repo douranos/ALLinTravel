@@ -101,9 +101,9 @@ This command builds the project and downloads the necessary dependencies.
 
 1. **Start the Application**
 
-In the project root directory, run:
+In the project root directory, change directory to target (cd target\) and run
 
-`mvn spring-boot:run`
+`java -jar helloworld-0.0.1-SNAPSHOT.jar`
 
 
 This command starts the Spring Boot application.
