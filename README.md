@@ -98,21 +98,27 @@ This command builds the project and downloads the necessary dependencies.
 
 1. **Compile Application**
 
-In the project root directory, run 'mvn compile'
+In the project root directory, run:
+
+`mvn compile`
 
 
 This command compiles the Spring Boot application.
 
 
 2.**Create the -jar File**
- In the project root Directory, run 'mvn package'
+ In the project root Directory, run:
+ 
+ `mvn package`
 
 
  This command creates the -jar file to run the application
 
  3.**Run the Application**
- Change directory to target\ ('cd target\')
- Then run java -jar helloworld-0.0.1-SNAPSHOT.jar
+ Change directory to target\ (`cd target\`)
+ Then run :
+ 
+ `java -jar helloworld-0.0.1-SNAPSHOT.jar`
  This command starts the application
 
 4. **Access the Application**
