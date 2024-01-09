@@ -139,10 +139,11 @@ Here is an overview of the project structure:
 - 'target/' : Contains the .jar file which runs the project(see above) and the compiled .class files
 
 ## Pages and Features
-
+-**Login and Registration Page**:Drives you to Home Page when you login
 - **Home Page**: Displays a welcome message and a "Let's Start" button.
 - **Questionnaire Page**: Interactive questions about travel preferences. (Accessible by clicking the "Let's Start" button on the Home Page)
-- **About Us Page**: Provides information about the creators or purpose of the application. (Accessible via the header)
-- **Summary page**-: Displays a message with your answers of the questions and the ideal travel destinations 
+- **Summary page**-: Displays a message with your answers of the questions and up to 3 ideal travel destinations 
+## UML Diagramm
+![final_project mdj_StarUML_](https://github.com/douranos/ALLinTravel/assets/146987465/8b992ce4-1d3f-4db6-9ef2-af92bcee2fc9)
 
 
