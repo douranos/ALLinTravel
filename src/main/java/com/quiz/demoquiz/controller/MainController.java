@@ -127,7 +127,7 @@ public String showSummary(Model model, HttpSession session) {
         OpenAiService service = new OpenAiService("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");
         CompletionRequest completionRequest = CompletionRequest.builder()
                 .prompt(prompt)
-                .model("text-davinci-003")
+                .model("gpt-3.5-turbo-instruct")
                 .echo(true)
                 .build();
         result = service.createCompletion(completionRequest).getChoices().get(0).getText();
