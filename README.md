@@ -12,7 +12,7 @@ Before you can run this project, make sure you have the following installed on y
 - Mysql (https://dev.mysql.com/downloads/installer/)
 
 ## Installation
-2. **Make a Mysql Database**
+1. **Make a Mysql Database**
    In mysql make a localhost connection with username :root and password : Cm@29012004@p
    Then, create a database called registration and there run the following:
       CREATE TABLE travel_questions (
@@ -76,21 +76,18 @@ INSERT INTO question_choices (id, question_id, choice) VALUES
 (22, 20, 'Cultural Exploration'),
 (23, 20, 'Something Else');
 
+2. **Download the project from github**
+     Download the last commit from the main branch and extract the .zip file 
 
 
-1. **Clone the Repository**
 
-   Open your terminal and run the following command to clone the project repository:
-
-`git clone [URL of the project repository]`
-
-2. **Open the Project**
+3. **Open the Project**
 
 Open the project in your preferred IDE.
 
-3. **Build the Project**
+4. **Build the Project**
 
-Navigate to the project root directory in your terminal and run:
+Navigate to the project root directory in your terminal(usually ends with ALLinTravel-main\) and run:
 
 `mvn clean install`
 
@@ -99,20 +96,30 @@ This command builds the project and downloads the necessary dependencies.
 
 ## Running the Application
 
-1. **Start the Application**
+1. **Compile Application**
 
-In the project root directory, change directory to target (cd target\) and run
-
-`java -jar helloworld-0.0.1-SNAPSHOT.jar`
+In the project root directory, run 'mvn compile'
 
 
-This command starts the Spring Boot application.
+This command compiles the Spring Boot application.
 
-2. **Access the Application**
+
+2.**Create the -jar File**
+ In the project root Directory, run 'mvn package'
+
+
+ This command creates the -jar file to run the application
+
+ 3.**Run the Application**
+ Change directory to target\ ('cd target\')
+ Then run java -jar helloworld-0.0.1-SNAPSHOT.jar
+ This command starts the application
+
+4. **Access the Application**
 
 Open your web browser and go to `http://localhost:8080`.
 
-You should see the homepage of the web application.
+You should see the login page  of the web application.
 
 ## Project Structure
 
@@ -123,6 +130,7 @@ Here is an overview of the project structure:
 - `src/main/resources/templates`: Contains the Thymeleaf templates for the web pages.
 - `src/main/resources/static`: Contains static resources like images and CSS files.
 - `pom.xml`: The Maven configuration file.
+- 'target/' : Contains the .jar file which runs the project(see above) and the compiled .class files
 
 ## Pages and Features
 
