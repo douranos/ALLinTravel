@@ -1,6 +1,6 @@
 #  AllinTravel Web App
 
-Welcome to the AllinTravel Web App project! This is a simple Spring Boot web application designed to help users find their next ideal travel destination. The app features a homepage with a welcome message and a button that leads to a series of questions about travel preferences.
+Welcome to the AllinTravel Web App project! This is a simple Spring Boot web application designed to help users find their next ideal travel destination. The app features a login ans Registration Page, a homepage with a welcome message and a button that leads to a series of questions about travel preferences and finally a Summary Page with your answers of the questions and the ideal destination.
 
 ## Prerequisites
 
@@ -77,6 +77,8 @@ INSERT INTO question_choices (id, question_id, choice) VALUES
 (23, 20, 'Something Else');
 
 2. **Download the project from github**
+
+   
      Download the last commit from the main branch and extract the .zip file 
 
 
@@ -107,6 +109,9 @@ This command compiles the Spring Boot application.
 
 
 2.**Create the -jar File**
+
+
+
  In the project root Directory, run:
  
  `mvn package`
@@ -115,6 +120,8 @@ This command compiles the Spring Boot application.
  This command creates the -jar file to run the application
 
  3.**Run the Application**
+
+ 
  Change directory to target\ (`cd target\`)
  Then run :
  
@@ -137,7 +144,7 @@ Here is an overview of the project structure:
 - `src/main/resources/static`: Contains static resources like images and CSS files.
 - `pom.xml`: The Maven configuration file.
 - 'target/' : Contains the .jar file which runs the project(see above) and the compiled .class files
-
+  The AI model we used is `gpt-3.5-turbo-instruct`
 ## Pages and Features
 -**Login and Registration Page**:Drives you to Home Page when you login
 - **Home Page**: Displays a welcome message and a "Let's Start" button.
