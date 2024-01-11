@@ -134,14 +134,18 @@ public String showSummary(Model model, HttpSession session) {
 
         // Extract and add only the last line of the result to the model
         String[] resultLines = result.split("\\r?\\n");
-        String lastLine = resultLines[resultLines.length - 1];
+        lastLine = resultLines[resultLines.length - 1];
+        model.addAttribute("lastLine", lastLine);
+       
+    }else {
+        lastLine="Not enough data to find a destination";
         model.addAttribute("lastLine", lastLine);
     }
-
     // Add other necessary data to the model
-    model.addAttribute("answers", answers);
+     model.addAttribute("answers", answers);
     return "summary"; // summary.html Thymeleaf template
 }
+
 
 	@PostMapping("/chat")
 	public String getChatMessages(@RequestBody ChatMessagePrompt prompt) {
