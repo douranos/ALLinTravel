@@ -113,7 +113,7 @@ public class MainController {
         @GetMapping("/summary")
 public String showSummary(Model model, HttpSession session) {
     List<Answer> answers = (List<Answer>) session.getAttribute("answers");
-    String prompt = "", result = "";
+    String prompt = "", result = "",lastLine="";
     if (answers != null) {
         // Construct the prompt, but do not add it to the model
         prompt =  "write   3 destination cities for a trip for people who like " +answers.get(0).getUserResponse()+", "+answers.get(8).getUserResponse()+" , "+answers.get(3).getUserResponse()+", "+
