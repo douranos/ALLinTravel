@@ -83,9 +83,9 @@ INSERT INTO question_choices (id, question_id, choice) VALUES
 
 
 
-3. **Open the Project**
+3. **Open the CMD**
 
-Open the project in your preferred IDE.
+Open your terminal.
 
 4. **Build the Project**
 
