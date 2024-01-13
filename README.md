@@ -83,9 +83,9 @@ INSERT INTO question_choices (id, question_id, choice) VALUES
 
 
 
-3. **Create your own API Key**
+3. **Open your terminal**
 
-After the project  has downloaded, go to OpenAPI.com and create your own API key,then go to class MainController (Package controller) and  replace in two positions (where it writes token) our api key with your own
+
 
 4. **Build the Project**
 
