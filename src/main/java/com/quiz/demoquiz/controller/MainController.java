@@ -5,6 +5,7 @@ import com.quiz.demoquiz.Quiz;
 import com.quiz.demoquiz.dao.ChoiceDao;
 import com.quiz.demoquiz.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -48,6 +49,8 @@ public class MainController {
 
         @Autowired
         ChoiceDao choiceDao; // Autowire the ChoiceDao
+	@Value("${openai.apikey}")
+        private String openAiApiKey;
 
         @GetMapping("/questions/{id}")
         public String getQuestion(Model model, @PathVariable int id, HttpSession session) {
@@ -124,7 +127,7 @@ public String showSummary(Model model, HttpSession session) {
         ". He is "+answers.get(14).getUserResponse()+" with the current health and safety situation (like political stability, crime rate, pandemic conditions) in potential destinations."+"The interests of the partner are :"+answers.get(17).getUserResponse()+". "+
         "Other specific landmarks, events, or experiences are: "+answers.get(20).getUserResponse()+"     (with three words)-------------------------------                       ";
 
-        OpenAiService service = new OpenAiService("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");
+        OpenAiService service = new OpenAiService(openAiApiKey);
         CompletionRequest completionRequest = CompletionRequest.builder()
                 .prompt(prompt)
                 .model("gpt-3.5-turbo-instruct")
@@ -154,7 +157,7 @@ public String showSummary(Model model, HttpSession session) {
 		// gpt-4, gpt-4-0613, gpt-4-32k, gpt-4-32k-0613, gpt-3.5-turbo,
 		// gpt-3.5-turbo-0613, gpt-3.5-turbo-16k, gpt-3.5-turbo-16k-0613
 
-		OpenAiService service = new OpenAiService("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");
+		OpenAiService service = new OpenAiService(openAiApiKey);
 		ChatCompletionRequest completionRequest = ChatCompletionRequest.builder().messages(prompt.getChatMessage())
 				.model("gpt-3.5-turbo").build();
 		return service.createChatCompletion(completionRequest).getChoices().get(0).getMessage().getContent();
