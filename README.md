@@ -100,7 +100,7 @@ Navigate to the project root directory in your terminal(usually ends with ALLinT
 `mvn clean install`
 
 
-This command builds the project and downloads the necessary dependencies and set a value to environment variable openai.apikey 
+This command builds the project and downloads the necessary dependencies and set a value to environment variable openai.apikey .In case it does not work create your own apikey and set it in the terminal
 
 ## Running the Application
 
