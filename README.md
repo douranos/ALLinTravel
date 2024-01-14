@@ -91,10 +91,16 @@ INSERT INTO question_choices (id, question_id, choice) VALUES
 
 Navigate to the project root directory in your terminal(usually ends with ALLinTravel-main\) and run:
 
+
+
+
+`set openai.apikey=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`
+
+
 `mvn clean install`
 
 
-This command builds the project and downloads the necessary dependencies.
+This command builds the project and downloads the necessary dependencies and set a value to environment variable openai.apikey 
 
 ## Running the Application
 
