@@ -94,13 +94,13 @@ Navigate to the project root directory in your terminal(usually ends with ALLinT
 
 
 
-`set openai.apikey=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`
+`set openai.apikey=YOUR API KEY`
 
 
 `mvn clean install`
 
 
-This command builds the project and downloads the necessary dependencies and set a value to environment variable openai.apikey .In case it does not work create your own apikey and set it in the terminal
+This command builds the project and downloads the necessary dependencies and set a value to path variable openai.apikey .
 
 ## Running the Application
 
