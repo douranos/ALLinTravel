@@ -15,7 +15,11 @@ Before you can run this project, make sure you have the following installed on y
 1. **Make a Mysql Database**
    In mysql make a localhost connection with username :root and password : Cm@29012004@p
    Then, create a database called registration and there run the following:
-      CREATE TABLE travel_questions (
+
+
+
+
+   CREATE TABLE travel_questions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     category VARCHAR(255),
     question TEXT,
@@ -100,7 +104,7 @@ Navigate to the project root directory in your terminal(usually ends with ALLinT
 `mvn clean install`
 
 
-This command builds the project and downloads the necessary dependencies and set a value to path variable openai.apikey .
+This command builds the project and downloads the necessary dependencies and set a value to path variable openai.apikey .Replace the 'YOUR API KEY' with your own apikey.
 
 ## Running the Application
 
@@ -150,7 +154,12 @@ Here is an overview of the project structure:
 - `src/main/resources/static`: Contains static resources like images and CSS files.
 - `pom.xml`: The Maven configuration file.
 - 'target/' : Contains the .jar file which runs the project(see above) and the compiled .class files
+
+
   The AI model we used is `gpt-3.5-turbo-instruct`
+## Packages
+-
+  
 ## Pages and Features
 -**Login and Registration Page**:Drives you to Home Page when you login
 - **Home Page**: Displays a welcome message and a "Let's Start" button.
