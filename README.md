@@ -159,12 +159,31 @@ Here is an overview of the project structure:
   The AI model we used is `gpt-3.5-turbo-instruct`
 ## Packages
 com.quiz.demoquiz. :
+
+
 -**config** :encodes the user password so we cannot see it in database or login page
+
+
+
 -**controller**: creates the Mapping of your web app ,connects with Chatgpt, goes through the questions and the answers of them and gives y a result
+
+
+
 -**dao** :make abstract methods used in QuestionService
+
+
+
+
 -**model** :creates in database the tables user,users_roles and role used for the login and signup part used for user authentication
+
+
+
 -**repository**
+
+
 -**service**: here take place the user authentication and check if questions one-by-one (by id) are text or choice questiions 
+
+
   
 ## Pages and Features
 -**Login and Registration Page**:Drives you to Home Page when you login
