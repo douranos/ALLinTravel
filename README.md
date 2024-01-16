@@ -196,6 +196,14 @@ com.quiz.demoquiz. :
 
 
 Promotional video made by Anastasis Giallousis
+
+
 Login Register part of the project was written by Christos Mouratidis and Anastasis Giallousis
+
+
 Questions part was written by Nikos Douranos
+
+
 ChatGpt connection was written by Chris Mouratidis
+
+Presentations made by Christos Mouratidis and Anastasis Giallousis
