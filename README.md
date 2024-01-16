@@ -194,3 +194,8 @@ com.quiz.demoquiz. :
 ![final_project mdj_StarUML_](https://github.com/douranos/ALLinTravel/assets/146987465/8b992ce4-1d3f-4db6-9ef2-af92bcee2fc9)
 
 
+
+Promotional video made by Anastasis Giallousis
+Login Register part of the project was written by Christos Mouratidis and Anastasis Giallousis
+Questions part was written by Nikos Douranos
+ChatGpt connection was written by Chris Mouratidis
